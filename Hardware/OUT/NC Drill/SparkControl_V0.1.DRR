@@ -1,0 +1,22 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: SparkControl_V0.1.PcbDoc   28/12/2023  13:08:00
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : SparkControl_V0.1-RoundHoles.TXT
+ASCII SlotHoles File : SparkControl_V0.1-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.3mm (12mil)                                             Round             65        PTH        507.69mm (19.99inch)
+T2      0.305mm (12mil)                                           Round             4         PTH        3.05mm (0.12inch)
+T3      0.356mm (14mil)                                           Round             4         PTH        89.26mm (3.51inch)
+T4      0.6mm (24mil)                                             Slot              4         PTH        38.14mm (1.50inch)
+T5      0.762mm (30mil)                                           Round             12        PTH        27.94mm (1.10inch)
+T6      2.5mm (98mil)                                             Round             4         PTH        214.10mm (8.43inch)
+T7      0.65mm (26mil)                                            Round             2         NPTH       5.78mm (0.23inch)
+T8      2.4mm (94mil)                                             Round             1         NPTH       0.00mm (0.00inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              96
+
+Total Processing Time (hh:mm:ss) : 00:00:00

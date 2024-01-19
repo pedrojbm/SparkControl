@@ -1,0 +1,8 @@
+Change Component Footprint: Designator=D1 Old Footprint=SOT95P280X145-6N New Footprint=SOT95P280X145-6N
+Added Pin To Net: NetName=USB_P Pin=D1-1
+Added Pin To Net: NetName=VBUS Pin=D1-2
+Added Pin To Net: NetName=USB_N Pin=D1-3
+Add Pin To Net: Unknown Pin: Pin J?-S1
+Add Pin To Net: Unknown Pin: Pin J?-S2
+Add Pin To Net: Unknown Pin: Pin J?-S3
+Add Pin To Net: Unknown Pin: Pin J?-S4

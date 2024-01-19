@@ -1,0 +1,401 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">28/12/2023</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12:44:40</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc" class="file"><acronym title="D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc">D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">15</td></tr>
+</table>
+</td>
+</table><a name="IDYX13HYXLG00CLMG3QGWYDPC0XCC1WL1UW2HWDLP0L3QU3WP0KE1E"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3GE5RJPAQBF5HO0XR0JBJ3A2VHVVP4DSF1TEBGKW5QMSVD44UOR">Clearance Constraint (Gap=5mil) (All),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUBSMPWAL3ETWRHFGRTLEZCIVMQ5VPVYQNAO4SCXVMA0I1TZQPDF">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3OCCEW040XZLMPGLYYVFCX2JHF4DMBUFX2CPTGGIXZXZM3JMWLCB">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1KSCG3LEVPYAGTJG3UWGDCHZBH2APFCDMD5U2QBZ4JZS1EZAUMP">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJLIS00XRGVGXHF3OBESKJPRDQL3I4FBLQFIIQWBSGWIAJCH1HJ4P">Width Constraint (Min=5mil) (Max=1000mil) (Preferred=5mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQBVGUPQAIIBSIYYBFU1O0QFYYOUQTS5MHHZOYOMBMFTDCDFD4IHM">Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (InPadClass('PowerPads'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQ5FKZOOJKYLFDKDNGOWNY4ZVTISCRMDYGSP1DHPW21BPC5GSTMC">Power Plane Connect Rule(Relief Connect )(Expansion=11.811mil) (Conductor Width=5mil) (Air Gap=5mil) (Entries=4) (InNet('GND'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRFLV33PT3ML4GJVJQE5FLRFT0KQ3GWCZJJX4UPMCWPBYCZBYKMJ">Minimum Annular Ring (Minimum=5.118mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5Y0HWVVNLR1CI4SXC4WBDJ1HXBUNPMWXZ2QT0ZNG44TXIAYXG5TI">Hole Size Constraint (Min=11.811mil) (Max=248.031mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKWSXH5FEQKUDDIZEKIX1XA2ZEDOS0KR0WQFOPWLWIHPACIIJUB3G">Hole To Hole Clearance (Gap=19.685mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKINPZ4T2CL21EWDMU5IGO1AECGOEIBA4VQJNYKCJQ5NTCIX0DECC">Minimum Solder Mask Sliver (Gap=0mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSTR0VRCOMMCVKMBRL3CWWGTG0NZTEEZETOM1RHMXQJLYTGF5HLXK">Silk To Solder Mask (Clearance=5.906mil) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHV4YKAVAB31NOX20FYTSBSS4NOCLX3SRUAU0RSLWVZZGEL2UZNLO">Silk to Silk (Clearance=0mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDBJOCAJZGP0WFD5MYTP1OOTLTHOZYGU5P01HNZWM5GQGX5MCES2DG">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYXWYKGMVTAMFDL2DBEPK0YAEPEEZVAWUNHNT5YL4FWYUKHCGHNRE">Board Clearance Constraint (Gap=0mil) (All)</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID32FQ3GGYBXIWDCTC40XIGAEZBU1CJ4F4BNXDCL2SEJVKIBEULOI">Matched Lengths(Tolerance=10mil) (InDifferentialPairClass('diff90'))</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0KCIJNBQ1XZKBYGNE5NMBXHDLD3F4JO3IWKA1GGJ2NTDB45LRSR">Height Constraint (Min=0mil) (Max=71497.938mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">15</td>
+</tr>
+</table><br><a name="ID3GE5RJPAQBF5HO0XR0JBJ3A2VHVVP4DSF1TEBGKW5QMSVD44UOR"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=5mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5637.637mil|Location2.X=5648.887mil|Location1.Y=8654.444mil|Location2.Y=8665.694mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5637.637mil|Location2.X=5648.887mil|Location1.Y=8654.444mil|Location2.Y=8665.694mil|Absolute=True">Clearance Constraint: (4.015mil &lt; 10mil) Between Pad J1-(-1657.874mil,1853.396mil) on Multi-Layer And Pad J1-A1B12(-1645.668mil,1811mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5630.948mil|Location2.X=5642.472mil|Location1.Y=8654.995mil|Location2.Y=8666.245mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5630.948mil|Location2.X=5642.472mil|Location1.Y=8654.995mil|Location2.Y=8666.245mil|Absolute=True">Clearance Constraint: (5.599mil &lt; 10mil) Between Pad J1-(-1657.874mil,1853.396mil) on Multi-Layer And Pad J1-A4B9(-1677.164mil,1811mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5409.385mil|Location2.X=5420.635mil|Location1.Y=8654.464mil|Location2.Y=8665.714mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5409.385mil|Location2.X=5420.635mil|Location1.Y=8654.464mil|Location2.Y=8665.714mil|Absolute=True">Clearance Constraint: (4.055mil &lt; 10mil) Between Pad J1-(-1885.434mil,1853.436mil) on Multi-Layer And Pad J1-B1A12(-1897.636mil,1811mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5416.067mil|Location2.X=5427.536mil|Location1.Y=8655.013mil|Location2.Y=8666.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5416.067mil|Location2.X=5427.536mil|Location1.Y=8655.013mil|Location2.Y=8666.263mil|Absolute=True">Clearance Constraint: (5.638mil &lt; 10mil) Between Pad J1-(-1885.434mil,1853.436mil) on Multi-Layer And Pad J1-B4A9(-1866.14mil,1811mil) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID3OCCEW040XZLMPGLYYVFCX2JHF4DMBUFX2CPTGGIXZXZM3JMWLCB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7095.552mil|Location2.X=7269.804mil|Location1.Y=6852.456mil|Location2.Y=7026.708mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7095.552mil|Location2.X=7269.804mil|Location1.Y=6852.456mil|Location2.Y=7026.708mil|Absolute=True">Un-Routed Net Constraint: Via (-118.11mil,118.11mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7095.552mil|Location2.X=7269.804mil|Location1.Y=8667.59mil|Location2.Y=8841.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7095.552mil|Location2.X=7269.804mil|Location1.Y=8667.59mil|Location2.Y=8841.842mil|Absolute=True">Un-Routed Net Constraint: Via (-118.11mil,1933.244mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3788.465mil|Location2.X=3962.717mil|Location1.Y=6852.456mil|Location2.Y=7026.708mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3788.465mil|Location2.X=3962.717mil|Location1.Y=6852.456mil|Location2.Y=7026.708mil|Absolute=True">Un-Routed Net Constraint: Via (-3425.197mil,118.11mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3788.465mil|Location2.X=3962.717mil|Location1.Y=8667.59mil|Location2.Y=8841.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3788.465mil|Location2.X=3962.717mil|Location1.Y=8667.59mil|Location2.Y=8841.842mil|Absolute=True">Un-Routed Net Constraint: Via (-3425.197mil,1933.244mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDYXWYKGMVTAMFDL2DBEPK0YAEPEEZVAWUNHNT5YL4FWYUKHCGHNRE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Board Clearance Constraint (Gap=0mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5701.994mil|Location2.X=5708.243mil|Location1.Y=8886.052mil|Location2.Y=8892.301mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5701.994mil|Location2.X=5708.243mil|Location1.Y=8886.052mil|Location2.Y=8892.301mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-1595.669mil,2047.491mil)(-1595.669mil,2081.349mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5350.025mil|Location2.X=5356.275mil|Location1.Y=8886.052mil|Location2.Y=8892.301mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5350.025mil|Location2.X=5356.275mil|Location1.Y=8886.052mil|Location2.Y=8892.301mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-1947.638mil,2047.491mil)(-1947.638mil,2081.349mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5526.01mil|Location2.X=5532.259mil|Location1.Y=8899.696mil|Location2.Y=8905.945mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5526.01mil|Location2.X=5532.259mil|Location1.Y=8899.696mil|Location2.Y=8905.945mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-1947.638mil,2081.349mil)(-1595.669mil,2081.349mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7061.443mil|Location2.X=7067.692mil|Location1.Y=8870.818mil|Location2.Y=8877.068mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7061.443mil|Location2.X=7067.692mil|Location1.Y=8870.818mil|Location2.Y=8877.068mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-236.22mil,1794.976mil)(-236.22mil,2050.882mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6352.781mil|Location2.X=6359.031mil|Location1.Y=8870.818mil|Location2.Y=8877.068mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6352.781mil|Location2.X=6359.031mil|Location1.Y=8870.818mil|Location2.Y=8877.068mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-944.882mil,1794.976mil)(-944.882mil,2050.882mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6707.112mil|Location2.X=6713.361mil|Location1.Y=8870.818mil|Location2.Y=8877.068mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6707.112mil|Location2.X=6713.361mil|Location1.Y=8870.818mil|Location2.Y=8877.068mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-944.882mil,2050.882mil)(-236.22mil,2050.882mil) on Top Overlay </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID32FQ3GGYBXIWDCTC40XIGAEZBU1CJ4F4BNXDCL2SEJVKIBEULOI"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Matched Lengths(Tolerance=10mil) (InDifferentialPairClass('diff90'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5478.011mil|Location2.X=5579.035mil|Location1.Y=8481.566mil|Location2.Y=8675.936mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5478.011mil|Location2.X=5579.035mil|Location1.Y=8481.566mil|Location2.Y=8675.936mil|Absolute=True">Matched Net Lengths: Between Net USB_N And Net USB_P Actual Difference against USB_P is: 43.631mil, Tolerance : 10mil. </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

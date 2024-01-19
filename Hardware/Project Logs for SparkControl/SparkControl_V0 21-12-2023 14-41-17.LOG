@@ -1,0 +1,25 @@
+Added Component: Designator=J?(USB-TYPE-C-017)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/CSP-USC16-TR/Valcon/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Valcon"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "CSP-USC16-TR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/CSP-USC16-TR/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/CSP-USC16-TR/Valcon/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=J?-A1B12
+Added Pin To Net: NetName=VBUS Pin=J?-A4B9
+Added Pin To Net: NetName=NetJ?_A5 Pin=J?-A5
+Added Pin To Net: NetName=USB_P Pin=J?-A6
+Added Pin To Net: NetName=USB_N Pin=J?-A7
+Added Pin To Net: NetName=GND Pin=J?-B1A12
+Added Pin To Net: NetName=VBUS Pin=J?-B4A9
+Added Pin To Net: NetName=NetJ?_B5 Pin=J?-B5
+Added Pin To Net: NetName=USB_P Pin=J?-B6
+Added Pin To Net: NetName=USB_N Pin=J?-B7
+Add Pin To Net: Unknown Pin: Pin J?-S1
+Add Pin To Net: Unknown Pin: Pin J?-S2
+Add Pin To Net: Unknown Pin: Pin J?-S3
+Add Pin To Net: Unknown Pin: Pin J?-S4
+Added Member To Class: ClassName=U_USB_&_Power Member=Component J? USB-TYPE-C-017

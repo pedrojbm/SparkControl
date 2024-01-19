@@ -1,0 +1,75 @@
+Protel Design System Design Rule Check
+PCB File : D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc
+Date     : 28/12/2023
+Time     : 12:44:40
+
+Processing Rule : Clearance Constraint (Gap=5mil) (All),(All)
+   Violation between Clearance Constraint: (4.015mil < 10mil) Between Pad J1-(-1657.874mil,1853.396mil) on Multi-Layer And Pad J1-A1B12(-1645.668mil,1811mil) on Top Layer 
+   Violation between Clearance Constraint: (5.599mil < 10mil) Between Pad J1-(-1657.874mil,1853.396mil) on Multi-Layer And Pad J1-A4B9(-1677.164mil,1811mil) on Top Layer 
+   Violation between Clearance Constraint: (4.055mil < 10mil) Between Pad J1-(-1885.434mil,1853.436mil) on Multi-Layer And Pad J1-B1A12(-1897.636mil,1811mil) on Top Layer 
+   Violation between Clearance Constraint: (5.638mil < 10mil) Between Pad J1-(-1885.434mil,1853.436mil) on Multi-Layer And Pad J1-B4A9(-1866.14mil,1811mil) on Top Layer 
+Rule Violations :4
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Via (-118.11mil,118.11mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Via (-118.11mil,1933.244mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Via (-3425.197mil,118.11mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Via (-3425.197mil,1933.244mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
+Rule Violations :4
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=5mil) (Max=1000mil) (Preferred=5mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (InPadClass('PowerPads'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=11.811mil) (Conductor Width=5mil) (Air Gap=5mil) (Entries=4) (InNet('GND'))
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=5.118mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=11.811mil) (Max=248.031mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=19.685mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=5.906mil) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Board Clearance Constraint (Gap=0mil) (All)
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-1595.669mil,2047.491mil)(-1595.669mil,2081.349mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-1947.638mil,2047.491mil)(-1947.638mil,2081.349mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-1947.638mil,2081.349mil)(-1595.669mil,2081.349mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-236.22mil,1794.976mil)(-236.22mil,2050.882mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-944.882mil,1794.976mil)(-944.882mil,2050.882mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-944.882mil,2050.882mil)(-236.22mil,2050.882mil) on Top Overlay 
+Rule Violations :6
+
+Processing Rule : Matched Lengths(Tolerance=10mil) (InDifferentialPairClass('diff90'))
+   Violation between Matched Net Lengths: Between Net USB_N And Net USB_P Actual Difference against USB_P is: 43.631mil, Tolerance : 10mil. 
+Rule Violations :1
+
+Processing Rule : Height Constraint (Min=0mil) (Max=71497.938mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 15
+Waived Violations : 0
+Time Elapsed        : 00:00:02

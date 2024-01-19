@@ -1,0 +1,10 @@
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of PCB Document [SparkControl_V0.1.PcbDoc]
+   Generated File[Pick Place for SparkControl_V0.1.csv]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 13:08:00 On 28/12/2023

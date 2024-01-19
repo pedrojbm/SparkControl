@@ -1,0 +1,63 @@
+Altium Designer Pick and Place Locations
+D:\Documents\Proyectos\SparkControl\SparkControl\OUT\Pick Place\Pick Place for SparkControl_V0.1.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       28/12/23
+Time:       13:08
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mm
+
+"Designator","Comment","Layer","Footprint","Center-X(mm)","Center-Y(mm)","Rotation","Description"
+"J2","Button Pinout","TopLayer","PINOUT","-78.3683mm","34.4170mm","270",""
+"J1","USB-TYPE-C-017","TopLayer","USB-TYPE-C-017","-45.0000mm","48.3783mm","180","3A 1 Surface Mount 16P Female -25?~+85? Type-C SMD USB Connectors ROHS"
+"C11","0.1 µF","TopLayer","CAP_0603_1608","-36.3190mm","41.9354mm","0","CAP CER 0.1UF 10V X7R 0603"
+"D1","USBLC6-2SC6","TopLayer","SOT95P280X145-6N","-45.0155mm","41.5544mm","90","Very low capacitance ESD protection, 3.5 pF, -40 to 125 degC, 6-Pin SOT23, RoHS, Tape and Reel"
+"U5","CH340C","TopLayer","SOIC127P600X180-16N","-36.2790mm","37.4464mm","270","USB to serial chip CH340"
+"U4","ESP32-WROOM-32E_(16MB)","TopLayer","XCVR_ESP32-WROOM-32E_(16MB)","-15.0000mm","35.7224mm","0","Bluetooth, WiFi 802.11b/g/n, Bluetooth v4.2 +EDR, Class 1, 2 and 3 Transceiver Module 2.4GHz ~ 2.5GHz Integrated, Trace Surface Mount"
+"U3","MAX17048G+","TopLayer","SON50P200X200X80-9N","-66.6320mm","23.7744mm","180","Battery Battery Monitor IC Lithium-Ion 8-TDFN-EP _2x2_"
+"U2","ME6211C33M5G-N","TopLayer","SOT95P270X145-5N","-50.6960mm","34.8434mm","90","Fixed 6V 3.3V 500mA SOT-23-5 Low Dropout Regulators(LDO) RoHS"
+"U1","BQ24075RGTR","TopLayer","QFN50P300X300X100-17N","-57.2250mm","28.2812mm","90","Standalone 1-cell 1.5-A linear charger, Power Path, 4.2-V VBAT and 5.5-V VOUT 16-VQFN -40 to 85"
+"TBP2","Reset","TopLayer","Tweezer-bridgeable_Pads","-29.2940mm","41.3004mm","90","Tweezer-Bridgeabled Pads"
+"TBP1","Boot","TopLayer","Tweezer-bridgeable_Pads","-1.2270mm","27.2288mm","90","Tweezer-Bridgeabled Pads"
+"R25","12k","TopLayer","RES_0603_1608","-35.0472mm","28.3210mm","0","RES 12K OHM 5% 1/10W 0603"
+"R24","12k","TopLayer","RES_0603_1608","-35.0472mm","30.3530mm","0","RES 12K OHM 5% 1/10W 0603"
+"R23","470","TopLayer","RES_0603_1608","-27.7700mm","41.3004mm","270","RES 470 OHM 5% 1/10W 0603"
+"R22","470","TopLayer","RES_0603_1608","-2.7510mm","27.2288mm","270","RES 470 OHM 5% 1/10W 0603"
+"R21","470","TopLayer","RES_0603_1608","-6.4340mm","24.2824mm","0","RES 470 OHM 5% 1/10W 0603"
+"R20","12k","TopLayer","RES_0603_1608","-27.7700mm","44.0944mm","270","RES 12K OHM 5% 1/10W 0603"
+"R19","12k","TopLayer","RES_0603_1608","-4.2750mm","27.2288mm","90","RES 12K OHM 5% 1/10W 0603"
+"R18","4.7 kO","TopLayer","RES_0603_1608","-84.0833mm","32.1310mm","180","RES SMD 4.7K OHM 0.1% 1/10W 0603"
+"R17","4.7 kO","TopLayer","RES_0603_1608","-84.0833mm","36.7030mm","180","RES SMD 4.7K OHM 0.1% 1/10W 0603"
+"R16","4.7 kO","TopLayer","RES_0603_1608","-84.0833mm","35.1790mm","180","RES SMD 4.7K OHM 0.1% 1/10W 0603"
+"R15","4.7 kO","TopLayer","RES_0603_1608","-84.0833mm","29.0830mm","180","RES SMD 4.7K OHM 0.1% 1/10W 0603"
+"R14","4.7 kO","TopLayer","RES_0603_1608","-84.0833mm","38.2270mm","180","RES SMD 4.7K OHM 0.1% 1/10W 0603"
+"R13","4.7 kO","TopLayer","RES_0603_1608","-84.0833mm","27.5590mm","180","RES SMD 4.7K OHM 0.1% 1/10W 0603"
+"R12","4.7 kO","TopLayer","RES_0603_1608","-84.0833mm","41.2750mm","180","RES SMD 4.7K OHM 0.1% 1/10W 0603"
+"R11","4.7 kO","TopLayer","RES_0603_1608","-84.0833mm","39.7510mm","180","RES SMD 4.7K OHM 0.1% 1/10W 0603"
+"R10","4.7 kO","TopLayer","RES_0603_1608","-84.0833mm","33.6550mm","180","RES SMD 4.7K OHM 0.1% 1/10W 0603"
+"R9","4.7 kO","TopLayer","RES_0603_1608","-84.0833mm","30.6070mm","180","RES SMD 4.7K OHM 0.1% 1/10W 0603"
+"R8","1.78 kO","TopLayer","RES_0603_1608","-60.9170mm","26.6954mm","0","RES 1.78K OHM 1% 1/8W 0603"
+"R7","47 kO","TopLayer","RES_0603_1608","-60.9170mm","28.7274mm","0","RES SMD 47K OHM 5% 1/4W 0603"
+"R6","4.7 kO","TopLayer","RES_0603_1608","-58.7580mm","31.8916mm","270","RES SMD 4.7K OHM 0.1% 1/10W 0603"
+"R5","10 kO","TopLayer","RES_0603_1608","-59.3676mm","25.1714mm","0","RES SMD 10K OHM 1% 1/10W 0603"
+"R4","5.1 kO","TopLayer","RES_0603_1608","-51.0200mm","46.5874mm","90","RES 5.1K OHM 5% 1/10W 0603"
+"R3","5.1 kO","TopLayer","RES_0603_1608","-38.9800mm","46.5874mm","90","RES 5.1K OHM 5% 1/10W 0603"
+"R2","4.7 kO","TopLayer","RES_0603_1608","-4.2750mm","31.3074mm","90","RES SMD 4.7K OHM 0.1% 1/10W 0603"
+"R1","4.7 kO","TopLayer","RES_0603_1608","-2.7510mm","29.9974mm","90","RES SMD 4.7K OHM 0.1% 1/10W 0603"
+"Q2","S8050","TopLayer","SOT95P240X115-3N","-38.3492mm","29.3370mm","180","Transistor"
+"Q1","S8050","TopLayer","SOT95P240X115-3N","-31.7452mm","29.3370mm","0","Transistor"
+"ON","Blue","TopLayer","LED_0603_1608_BLUE","-2.7510mm","21.1074mm","270","LED BLUE 0603 SMD"
+"C10","0.1 µF","TopLayer","CAP_0603_1608","-30.3100mm","35.3714mm","270","CAP CER 0.1UF 10V X7R 0603"
+"C9","1 µF","TopLayer","CAP_0603_1608","-32.2512mm","26.8224mm","180","CAP CER 1UF 25V X7R 0603"
+"C8","0.1 µF","TopLayer","CAP_0603_1608","-25.8064mm","44.0836mm","270","CAP CER 0.1UF 10V X7R 0603"
+"C7","0.1 µF","TopLayer","CAP_0603_1608","-63.8380mm","24.4494mm","270","CAP CER 0.1UF 50V X7R 0603"
+"C6","1 µF","TopLayer","CAP_0603_1608","-50.9710mm","38.1254mm","180","CAP CER 1UF 25V X7R 0603"
+"C5","1 µF","TopLayer","CAP_0603_1608","-50.9632mm","31.5214mm","180","CAP CER 1UF 25V X7R 0603"
+"C4","0.1 µF","TopLayer","CAP_0603_1608","-47.7090mm","40.7924mm","90","CAP CER 0.1UF 10V X7R 0603"
+"C3","4.7 µF","TopLayer","CAP_0603_1608","-56.5736mm","25.1714mm","180","CAP CER 4.7UF 16V X6S 0603"
+"C2","4.7 µF","TopLayer","CAP_0603_1608","-56.5990mm","31.2547mm","180","CAP CER 4.7UF 16V X6S 0603"
+"C1","1 µF","TopLayer","CAP_0603_1608","-60.9170mm","30.2514mm","0","CAP CER 1UF 25V X7R 0603"
+"BT1","BH-18650-B1BA002","TopLayer","BH-18650-B1BA002","-45.0000mm","7.8364mm","0","BH-18650-B1BA002"

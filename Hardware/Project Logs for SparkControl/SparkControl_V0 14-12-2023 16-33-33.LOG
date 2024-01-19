@@ -1,0 +1,103 @@
+Change Component Footprint: Designator=D1 Old Footprint=SOT95P280X145-6N New Footprint=SOT95P280X145-6N
+Add Component: Footprint Not Found FP-C0603C-CF-MFG
+Add Component: Footprint Not Found CAP 0603_1608
+Added Component: Designator=C?(CAP 0603_1608)
+Add component (AddParameter): Name = "Applications"; Value = "Bypass, Decoupling"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Capacitance"; Value = "0.1 µF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "componentlink1description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "componentlink1url"; Value = "https://www.johansondielectrics.com/downloads/x2y-filter-and-decoupling-capacitors.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "componentlink2description"; Value = "DigiKey Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "componentlink2url"; Value = "https://www.digikey.com/en/products/detail/johanson-dielectrics-inc/100X14W104MV4T/1655914"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "Low ESL (X2Y)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "lastupdated"; Value = "16/06/2023 19:15:23"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lifecycle Status"; Value = "Active"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufacturer"; Value = "Johanson Dielectrics Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Minimum Order"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount, MLCC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-55°C ~ 125°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "0603 (1608 Metric)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "packaging"; Value = "TapeAndReel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "100X14W104MV4T"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Status"; Value = "Active"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "partid"; Value = "2680"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "price"; Value = "0.08"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "series"; Value = "X2Y®"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size / Dimension"; Value = "0.064" L x 0.035" W (1.63mm x 0.89mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "DigiKey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "709-1101-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Thickness (Max)"; Value = "0.026" (0.66mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±20%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1 µF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage - Rated"; Value = "10V"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found LED 0603_1608 BLUE
+Add Component: Footprint Not Found SOT95P240X115-3N
+Add Component: Footprint Not Found SOT95P240X115-3N
+Add Component: Footprint Not Found RESC1608X55X30NL15T15
+Add Component: Footprint Not Found RES 0603_1608
+Add Component: Footprint Not Found RES 0603_1608
+Add Component: Footprint Not Found RES 0603_1608
+Add Component: Footprint Not Found RES 0603_1608
+Add Component: Footprint Not Found RES 0603_1608
+Add Component: Footprint Not Found RESC1608X55X30NL15T15
+Add Component: Footprint Not Found RES 0603_1608
+Add Component: Footprint Not Found RES 0603_1608
+Added Component: Designator=TBP?(Tweezer-bridgeable Pads)
+Added Component: Designator=TBP?(Tweezer-bridgeable Pads)
+Added Component: Designator=U?(XCVR_ESP32-WROOM-32E_(16MB))
+Add component (AddParameter): Name = "Availability"; Value = "Not in stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/ESP32-WROOM-32E%20(16MB)/Espressif+Systems/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Espressif Systems"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "ESP32-WROOM-32E (16MB)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/ESP32-WROOM-32E%20(16MB)/Espressif+Systems/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U?(SOIC127P600X180-16N)
+Add component (AddParameter): Name = "Availability"; Value = "Not in stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Chip"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/CH340C/WCH/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "WCH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "CH340C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/CH340C/WCH/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C?-1
+Added Pin To Net: NetName=+3V3 Pin=C?-2
+Added Pin To Net: NetName=GND Pin=C?-2
+Add Pin To Net: Unknown Pin: Pin D?-2
+Add Pin To Net: Unknown Pin: Pin R?-1
+Add Pin To Net: Unknown Pin: Pin R?-1
+Added Pin To Net: NetName=GND Pin=TBP?-2
+Added Pin To Net: NetName=GND Pin=TBP?-2
+Added Pin To Net: NetName=GND Pin=U?-1
+Added Pin To Net: NetName=+3V3 Pin=U?-2
+Added Pin To Net: NetName=+3V3 Pin=U?-4
+Added Pin To Net: NetName=NRF_P Pin=U?-5
+Added Pin To Net: NetName=NRF_N Pin=U?-6
+Added Pin To Net: NetName=+3V3 Pin=U?-16
+Added Pin To Net: NetName=NetU3_7 Pin=U?-33
+Added Pin To Net: NetName=NetU3_8 Pin=U?-36
+Added Pin To Net: NetName=D\T\R\ Pin=U?-13
+Added Net: Name=D\T\R\
+Added Pin To Net: NetName=EN Pin=C?-1
+Added Pin To Net: NetName=EN Pin=U?-3
+Added Net: Name=EN
+Added Pin To Net: NetName=IO0 Pin=U?-25
+Added Net: Name=IO0
+Added Net: Name=IO2
+Added Net: Name=NetD?_1
+Added Net: Name=NetQ?_1
+Add Net: Net with name "NetQ?_1" already exists
+Added Pin To Net: NetName=NetR?_2 Pin=TBP?-1
+Added Net: Name=NetR?_2
+Add Net: Net with name "NetR?_2" already exists
+Added Pin To Net: NetName=R\T\S\ Pin=U?-14
+Added Net: Name=R\T\S\
+Added Pin To Net: NetName=USB_RX Pin=U?-3
+Added Net: Name=USB_RX
+Added Pin To Net: NetName=USB_TX Pin=U?-2
+Added Net: Name=USB_TX
+Added Class: Name=ESP32
