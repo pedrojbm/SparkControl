@@ -35,9 +35,10 @@ void setup() {
 
 	isInitBoot = true;
 	Serial.begin(115200);
-	while (!Serial)
-		;
+	while (!Serial);
 
+  Wire.setPins(26,14);
+  
 	Serial.println("Initializing");
 	//spark_dc = new SparkDataControl();
 	spark_bh.setDataControl(&spark_dc);
