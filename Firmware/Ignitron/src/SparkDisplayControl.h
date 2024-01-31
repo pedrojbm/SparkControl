@@ -9,7 +9,7 @@
 #define SPARKDISPLAYCONTROL_H_
 
 #include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h> //https://github.com/adafruit/Adafruit_SSD1306
+#include <Adafruit_SH110X.h>
 #include "Config_Definitions.h"
 
 #include "SparkDataControl.h"
@@ -41,7 +41,7 @@ public:
 
 
 private:
-	static Adafruit_SSD1306 display;
+	static Adafruit_SH1106G display;
 	SparkDataControl* spark_dc;
 	int activeBank = 1;
 	int pendingBank = 1;

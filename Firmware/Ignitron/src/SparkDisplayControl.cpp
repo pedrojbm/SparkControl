@@ -8,7 +8,7 @@
 
 #include "SparkDisplayControl.h"
 
-Adafruit_SSD1306 SparkDisplayControl::display(SCREEN_WIDTH, SCREEN_HEIGHT,
+Adafruit_SH1106G SparkDisplayControl::display(SCREEN_WIDTH, SCREEN_HEIGHT,
 		&Wire, OLED_RESET);
 
 SparkDisplayControl::SparkDisplayControl() :
@@ -17,7 +17,7 @@ SparkDisplayControl::SparkDisplayControl() :
 }
 
 SparkDisplayControl::SparkDisplayControl(SparkDataControl *dc) {
-	//Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+	//AAdafruit_SH1106G display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 	spark_dc = dc;
 	presetFromApp = nullptr;
 	secondaryLinePreset = nullptr;
@@ -30,17 +30,15 @@ SparkDisplayControl::~SparkDisplayControl() {
 }
 
 void SparkDisplayControl::init(int mode) {
-	// SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
-	if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // 0x3C required for this display
-		Serial.println(F("SSD1306 initialization failed"));
-		for (;;)
-			; // Loop forever
-	}
+
+	delay(250); // wait for the OLED to power up
+  	display.begin(0x3C, true); // Address 0x3C default
+
 	initKeyboardLayoutStrings();
 	// Clear the buffer
 	display.clearDisplay(); //No Adafruit splash
 	display.display();
-	display.setTextColor(SSD1306_WHITE);
+	display.setTextColor(SH110X_WHITE);
 	display.setTextWrap(false);
 	opMode = spark_dc->operationMode();
 
@@ -54,7 +52,7 @@ void SparkDisplayControl::init(int mode) {
 
 void SparkDisplayControl::showInitialMessage() {
 	display.drawBitmap(0, 0, epd_bitmap_Ignitron_Logo, 128, 47,
-	SSD1306_WHITE);
+	SH110X_WHITE);
 	display.setTextSize(2);
 
 	std::string modeText;
@@ -78,7 +76,7 @@ void SparkDisplayControl::showInitialMessage() {
 
 void SparkDisplayControl::showBankAndPresetNum() {
 	// Display the bank and preset number
-	display.setTextColor(SSD1306_WHITE);
+	display.setTextColor(SH110X_WHITE);
 	//Configure numbers as strings
 	std::ostringstream selBankStr;
 	selBankStr << pendingBank;
@@ -133,11 +131,11 @@ void SparkDisplayControl::showPresetName() {
 	int textColor;
 	// Show preset name inverted if it is not the currently selected one
 	if (pendingBank == activeBank && presetEditMode != PRESET_EDIT_DELETE) {
-		rectColor = SSD1306_BLACK;
-		textColor = SSD1306_WHITE;
+		rectColor = SH110X_BLACK;
+		textColor = SH110X_WHITE;
 	} else {
-		rectColor = SSD1306_WHITE;
-		textColor = SSD1306_BLACK;
+		rectColor = SH110X_WHITE;
+		textColor = SH110X_BLACK;
 	}
 
 	display.setTextColor(textColor);
@@ -247,9 +245,9 @@ void SparkDisplayControl::showFX_SecondaryName() {
 			secondaryLineText = "";
 		}
 	}
-	display.fillRect(0, 48, 128, 16, SSD1306_BLACK);
+	display.fillRect(0, 48, 128, 16, SH110X_BLACK);
 
-	display.setTextColor(SSD1306_WHITE);
+	display.setTextColor(SH110X_WHITE);
 	display.setTextSize(2);
 	if (opMode == SPARK_MODE_APP || opMode == SPARK_MODE_LOOPER) {
 		drawCentreString(secondaryLineText.c_str(), secondaryLinePosY);
@@ -272,7 +270,7 @@ void SparkDisplayControl::showConnection() {
 	int xPosText = xPosSymbol;
 	int yPosText = 0;
 
-	uint16_t color = SSD1306_WHITE;
+	uint16_t color = SH110X_WHITE;
 	// Bluetooth
 	switch (currentBTMode) {
 	case BT_MODE_BLE:
@@ -297,7 +295,7 @@ void SparkDisplayControl::showPressedKey(){
 	short int pressedButtonPosX = 20;
 	short int pressedButtonPosY = 0;
 
-	display.setTextColor(SSD1306_WHITE);
+	display.setTextColor(SH110X_WHITE);
 	display.setTextSize(4);
 
 	display.setCursor(pressedButtonPosX, pressedButtonPosY);
@@ -361,16 +359,16 @@ void SparkDisplayControl::showKeyboardLayout(){
 
 	short int displayMid = display.width()/2;
 
-	display.fillRect(0, 48, 128, 16, SSD1306_BLACK);
+	display.fillRect(0, 48, 128, 16, SH110X_BLACK);
 
 	//Rectangle color for preset name
 	int rectColor;
 	int textColor;
 	int textColorInv;
 	// Show preset name inverted if it is not the currently selected one
-	rectColor = SSD1306_WHITE;
-	textColorInv = SSD1306_BLACK;
-	textColor = SSD1306_WHITE;
+	rectColor = SH110X_WHITE;
+	textColorInv = SH110X_BLACK;
+	textColor = SH110X_WHITE;
 
 	display.setTextColor(textColor);
 	display.setTextSize(2);
