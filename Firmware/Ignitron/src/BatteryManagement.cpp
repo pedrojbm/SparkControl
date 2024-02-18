@@ -25,6 +25,18 @@ void BatteryManagement::init()
     battery.begin();
     battery.quickStart();
     battery.setThreshold(20);
+    pinMode( PGOODpin,  INPUT); 
+    pinMode(   CHGpin,  INPUT);
+}
+
+bool BatteryManagement::getCHG()
+{
+    return digitalRead(CHGpin);
+}
+
+bool BatteryManagement::getPGOOD()
+{
+    return digitalRead(PGOODpin);     
 }
 
 double BatteryManagement::getBatteryLevel()

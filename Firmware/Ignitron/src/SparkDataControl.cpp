@@ -614,6 +614,16 @@ double SparkDataControl::BatteryLevel()
     return spark_battery->getBatteryLevel();
 }
 
+bool SparkDataControl::CHG()
+{
+    return spark_battery->getCHG();
+}
+
+bool SparkDataControl::PGOOD()
+{
+    return spark_battery->getPGOOD();
+}
+
 void SparkDataControl::setBank(int i){
 	if (i > presetBuilder.getNumberOfBanks() || i < 0) return;
 	activeBank_ = pendingBank_ = i;

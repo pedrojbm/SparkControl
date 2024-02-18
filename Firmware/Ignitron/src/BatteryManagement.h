@@ -13,6 +13,7 @@
 #include <SparkFun_MAX1704x_Fuel_Gauge_Arduino_Library.h> // Click here to get the library: http://librarymanager/All#SparkFun_MAX1704x_Fuel_Gauge_Arduino_Library
 
 #include "SparkDataControl.h"
+#include "Config_Definitions.h"
 
 class SparkDataControl;
 
@@ -26,6 +27,8 @@ class BatteryManagement
         void init();
 
         double getBatteryLevel();
+        bool getPGOOD();
+        bool getCHG();
 
         void setDataControl(SparkDataControl *dc) {
             spark_dc = dc;

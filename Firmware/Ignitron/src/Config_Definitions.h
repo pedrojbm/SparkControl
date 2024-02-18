@@ -42,7 +42,7 @@
 
 // Button long press time
 #define LONG_BUTTON_PRESS_TIME 1000
-
+#define POWEROFF_BUTTON_PRESS_TIME 5000
 
 // LED GPIOs
 #define LED_PRESET1_GPIO 2
@@ -105,6 +105,8 @@
 #define BT_MODE_BLE 1
 #define BT_MODE_SERIAL 2
 
-
+// Battery charger IC BQ24075
+#define PGOODpin 4
+#define CHGpin 16
 
 #endif /* CONFIG_DEFINITIONS_H_ */

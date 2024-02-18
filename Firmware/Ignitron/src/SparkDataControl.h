@@ -159,8 +159,9 @@ public:
 
 	// Functions for Batery Management
 	void setBatteryManagement(BatteryManagement *battery);
-	
-	double BatteryLevel();
+	double 	BatteryLevel();
+	bool 	CHG();
+	bool	PGOOD();
 
 private:
 	static int operationMode_;

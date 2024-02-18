@@ -310,12 +310,30 @@ void SparkDisplayControl::showBatteryState() {
 	display.setTextSize(1);
 	drawCentreTextInPos(batterySOCtext.c_str(), xPosText, yPosText);
 
-
-	if		(batteryLevel<=100 && batteryLevel>75)	display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_100_battery, symbolWidth, symbolHeight, color);
-	else if (batteryLevel<=75 && batteryLevel>50) 	display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_75_battery, symbolWidth, symbolHeight, color);
-	else if (batteryLevel<=50 && batteryLevel>25) 	display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_50_battery, symbolWidth, symbolHeight, color);
-	else if (batteryLevel<=25 && batteryLevel>0) 	display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_25_battery, symbolWidth, symbolHeight, color);
-	else if (batteryLevel<=0)						display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_25_battery, symbolWidth, symbolHeight, color);
+	if(!CHG)
+	{
+		display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_charge_battery, symbolWidth, symbolHeight, color);
+	}
+	else if (batteryLevel<=100 && batteryLevel>75)
+	{
+		display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_100_battery, symbolWidth, symbolHeight, color);
+	}
+	else if (batteryLevel<=75 && batteryLevel>50)
+	{
+		display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_75_battery, symbolWidth, symbolHeight, color);
+	}
+	else if (batteryLevel<=50 && batteryLevel>25)
+	{
+		display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_50_battery, symbolWidth, symbolHeight, color);
+	}
+	else if (batteryLevel<=25 && batteryLevel>0)
+	{
+		display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_25_battery, symbolWidth, symbolHeight, color);
+	}
+	else if (batteryLevel<=0)
+	{
+		display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_25_battery, symbolWidth, symbolHeight, color);
+	}
 }
 
 void SparkDisplayControl::showPressedKey(){
@@ -436,6 +454,8 @@ void SparkDisplayControl::update(bool isInitBoot) {
 		opMode = spark_dc->operationMode();
 		currentBTMode = spark_dc->currentBTMode();
 		batterySOC = spark_dc->BatteryLevel();
+		CHG = spark_dc->CHG();
+		PGOOD = spark_dc->PGOOD();
 
 		showConnection();
 		showBatteryState();
