@@ -19,9 +19,9 @@
 #include "SparkMessage.h"
 #include "SparkPresetBuilder.h"
 #include "SparkStreamReader.h"
+#include "BatteryManagement.h"
 
 #include "SparkTypes.h"
-
 
 #define PRESET_EDIT_NONE 0
 #define PRESET_EDIT_STORE 1
@@ -31,6 +31,7 @@ using ByteVector = std::vector<byte>;
 
 class SparkBLEControl;
 class SparkDisplayControl;
+class BatteryManagement;
 
 class SparkDataControl {
 public:
@@ -156,6 +157,11 @@ public:
 
 	void restartESP(bool resetSparkMode=false);
 
+	// Functions for Batery Management
+	void setBatteryManagement(BatteryManagement *battery);
+	
+	double BatteryLevel();
+
 private:
 	static int operationMode_;
 
@@ -164,6 +170,7 @@ private:
 	static SparkMessage spark_msg;
 	static SparkPresetBuilder presetBuilder;
 	static SparkDisplayControl *spark_display;
+	static BatteryManagement *spark_battery;
 
 	SparkBLEKeyboard bleKeyboard;
 	eSPIFFS fileSystem;

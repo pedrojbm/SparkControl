@@ -12,6 +12,7 @@ SparkStreamReader SparkDataControl::spark_ssr;
 SparkMessage SparkDataControl::spark_msg;
 SparkPresetBuilder SparkDataControl::presetBuilder;
 SparkDisplayControl *SparkDataControl::spark_display = nullptr;
+BatteryManagement *SparkDataControl::spark_battery = nullptr;
 
 Preset SparkDataControl::activePreset_;
 Preset SparkDataControl::pendingPreset_ = activePreset_;
@@ -37,6 +38,7 @@ int SparkDataControl::currentBTMode_ = BT_MODE_BLE;
 int SparkDataControl::sparkModeAmp = SPARK_MODE_AMP;
 int SparkDataControl::sparkModeApp = SPARK_MODE_APP;
 
+
 SparkDataControl::SparkDataControl() {
 	//init();
 	bleControl = new SparkBLEControl(this);
@@ -47,6 +49,8 @@ SparkDataControl::~SparkDataControl() {
 		delete bleControl;
 	if (spark_display)
 		delete spark_display;
+	if(spark_battery)
+		delete spark_battery;
 }
 
 int SparkDataControl::init(int opModeInput) {
@@ -598,6 +602,16 @@ void SparkDataControl::restartESP(bool resetSparkMode){
 	}
 	Serial.println();
 	ESP.restart();
+}
+
+void SparkDataControl::setBatteryManagement(BatteryManagement *battery)
+{
+	spark_battery = battery;
+}
+
+double SparkDataControl::BatteryLevel()
+{
+    return spark_battery->getBatteryLevel();
 }
 
 void SparkDataControl::setBank(int i){

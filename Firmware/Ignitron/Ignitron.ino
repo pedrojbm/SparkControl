@@ -8,6 +8,7 @@
 #include "src/SparkDataControl.h"
 #include "src/SparkDisplayControl.h"
 #include "src/SparkLEDControl.h"
+#include "src/BatteryManagement.h"
 
 // Device Info Definitions
 const std::string DEVICE_NAME = "Ignitron";
@@ -18,6 +19,7 @@ SparkDataControl    spark_dc;
 SparkButtonHandler  spark_bh;
 SparkLEDControl     spark_led;
 SparkDisplayControl spark_display;
+BatteryManagement   battery;
 
 // Check for initial boot
 bool isInitBoot;
@@ -30,6 +32,7 @@ int operationMode = SPARK_MODE_APP;
 //
 /////////////////////////////////////////////////////////
 
+double soc = 0; // remove
 
 void setup() {
 
@@ -40,7 +43,7 @@ void setup() {
   Wire.setPins(26,14);
   
 	Serial.println("Initializing");
-	//spark_dc = new SparkDataControl();
+
 	spark_bh.setDataControl(&spark_dc);
 	operationMode = spark_bh.checkBootOperationMode();
 
@@ -63,21 +66,25 @@ void setup() {
 		Serial.println("======= Entering Keyboard mode =======");
 		break;
 	}
-
+  battery.setDataControl(&spark_dc);
 	spark_display.setDataControl(&spark_dc);
+  spark_dc.setBatteryManagement(&battery);
 	spark_dc.setDisplayControl(&spark_display);
+  battery.init();
 	spark_display.init(operationMode);
+  
 	// Assigning data control to buttons;
 	spark_bh.setDataControl(&spark_dc);
 	// Initializing control classes
 	spark_led.setDataControl(&spark_dc);
-
+  
+  
 	Serial.println("Initialization done.");
 
 }
 
 void loop() {
-
+  
 	// Methods to call only in APP mode
 	if (operationMode == SPARK_MODE_APP || operationMode == SPARK_MODE_LOOPER) {
 		while (!(spark_dc.checkBLEConnection())) {

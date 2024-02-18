@@ -287,7 +287,35 @@ void SparkDisplayControl::showConnection() {
 	if (isBTConnected) {
 		display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_bt_logo, symbolWidth, symbolHeight, color);
 	}
+	
+}
 
+void SparkDisplayControl::showBatteryState() {
+	// Display the battery symbols
+	int xPosSymbol = (display.width() / 2.0) + 17;
+	int yPosSymbol = 10;
+	int symbolWidth = 9;
+	int symbolHeight = 16;
+
+	int xPosText = xPosSymbol + 6;
+	int yPosText = 0;
+
+	uint16_t color = SH110X_WHITE;
+
+	int batteryLevel = static_cast<int>(batterySOC);
+	if(batteryLevel>100) batteryLevel=100;
+	batterySOCtext = std::to_string(batteryLevel) + '%';
+
+
+	display.setTextSize(1);
+	drawCentreTextInPos(batterySOCtext.c_str(), xPosText, yPosText);
+
+
+	if		(batteryLevel<=100 && batteryLevel>75)	display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_100_battery, symbolWidth, symbolHeight, color);
+	else if (batteryLevel<=75 && batteryLevel>50) 	display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_75_battery, symbolWidth, symbolHeight, color);
+	else if (batteryLevel<=50 && batteryLevel>25) 	display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_50_battery, symbolWidth, symbolHeight, color);
+	else if (batteryLevel<=25 && batteryLevel>0) 	display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_25_battery, symbolWidth, symbolHeight, color);
+	else if (batteryLevel<=0)						display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_25_battery, symbolWidth, symbolHeight, color);
 }
 
 void SparkDisplayControl::showPressedKey(){
@@ -407,8 +435,10 @@ void SparkDisplayControl::update(bool isInitBoot) {
 		isBTConnected = spark_dc->isAmpConnected() || spark_dc->isAppConnected();
 		opMode = spark_dc->operationMode();
 		currentBTMode = spark_dc->currentBTMode();
+		batterySOC = spark_dc->BatteryLevel();
 
 		showConnection();
+		showBatteryState();
 		showBankAndPresetNum();
 		updateTextPositions();
 		showPresetName();
@@ -467,6 +497,15 @@ void SparkDisplayControl::updateTextPositions() {
 			}
 		}
 	}
+}
+
+void SparkDisplayControl::drawCentreTextInPos(const char *buf, int x, int y)
+{
+	int16_t x1, y1;
+	uint16_t w, h;
+  	display.getTextBounds(buf, 0, 0, &x1, &y1, &w, &h);
+	display.setCursor(x - w/2, y);
+	display.print(buf);
 }
 
 void SparkDisplayControl::drawCentreString(const char *buf,
