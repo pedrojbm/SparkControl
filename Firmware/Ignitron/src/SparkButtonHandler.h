@@ -23,7 +23,7 @@ public:
 	void readButtons();
 	int checkBootOperationMode();
 	static void configureButtons();
-	
+
 	void setDataControl(SparkDataControl *dc) {
 		spark_dc = dc;
 	}

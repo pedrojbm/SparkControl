@@ -42,7 +42,6 @@
 
 // Button long press time
 #define LONG_BUTTON_PRESS_TIME 1000
-#define POWEROFF_BUTTON_PRESS_TIME 5000
 
 // LED GPIOs
 #define LED_PRESET1_GPIO 2

@@ -297,15 +297,18 @@ void SparkDisplayControl::showBatteryState() {
 	int symbolWidth = 9;
 	int symbolHeight = 16;
 
-	int xPosText = xPosSymbol + 6;
+	int xPosText = xPosSymbol + 7;
 	int yPosText = 0;
 
 	uint16_t color = SH110X_WHITE;
 
 	int batteryLevel = static_cast<int>(batterySOC);
-	if(batteryLevel>100) batteryLevel=100;
-	batterySOCtext = std::to_string(batteryLevel) + '%';
+	if(batteryLevel>100)
+	{
+		batteryLevel=100;
+	}
 
+	batterySOCtext = std::to_string(batteryLevel) + '%';
 
 	display.setTextSize(1);
 	drawCentreTextInPos(batterySOCtext.c_str(), xPosText, yPosText);
@@ -472,6 +475,20 @@ void SparkDisplayControl::update(bool isInitBoot) {
 		}
 
 	}
+	display.display();
+}
+
+void SparkDisplayControl::turnoffDisplay()
+{	
+	
+	display.clearDisplay();
+	display.display();
+	display.setTextSize(1);
+	display.setCursor(0,0);
+	display.print("Power off...");
+	display.display();
+	delay(1000);
+	display.clearDisplay();
 	display.display();
 }
 

@@ -604,6 +604,14 @@ void SparkDataControl::restartESP(bool resetSparkMode){
 	ESP.restart();
 }
 
+void SparkDataControl::turnoffESP()
+{
+	spark_display->turnoffDisplay();
+	esp_sleep_enable_ext0_wakeup(GPIO_NUM_35,0);
+	esp_deep_sleep_start();
+
+}
+
 void SparkDataControl::setBatteryManagement(BatteryManagement *battery)
 {
 	spark_battery = battery;

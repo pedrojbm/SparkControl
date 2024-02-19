@@ -156,7 +156,8 @@ public:
 	void resetLastKeyboardButtonPressed();
 
 	void restartESP(bool resetSparkMode=false);
-
+	void turnoffESP();
+	
 	// Functions for Batery Management
 	void setBatteryManagement(BatteryManagement *battery);
 	double 	BatteryLevel();

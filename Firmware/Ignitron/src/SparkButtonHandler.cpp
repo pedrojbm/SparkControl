@@ -380,8 +380,15 @@ void SparkButtonHandler::btnResetHandler(BfButton *btn,
 	int pressed_btn_gpio = btn->getID();
 	DEBUG_PRINT("Button pressed: ");
 	DEBUG_PRINTLN(pressed_btn_gpio);
-	spark_dc->restartESP(true);
 
+
+	if (digitalRead(BUTTON_BANK_UP_GPIO) == LOW) {
+		Serial.println("Turning off spark controller.");
+		spark_dc->turnoffESP();
+
+	} else if (digitalRead(BUTTON_BANK_UP_GPIO) == HIGH) {
+		spark_dc->restartESP(true);
+	}
 }
 
 void SparkButtonHandler::btnToggleFXHandler(BfButton *btn, BfButton::press_pattern_t pattern){
