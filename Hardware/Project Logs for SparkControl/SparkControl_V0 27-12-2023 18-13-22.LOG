@@ -1,6 +1,0 @@
-Removed Pin From Net: NetName=Btn_3 Pin=TP7-1
-Removed Pin From Net: NetName=NetR1_1 Pin=U4-23
-Removed Pin From Net: NetName=NetU3_5 Pin=U4-26
-Removed Pin From Net: NetName=NetU1_15 Pin=U4-27
-Added Pin To Net: NetName=SDA Pin=TP7-1
-Added Member To Class: ClassName=ESP32 Member=Component J2 Button Pinout

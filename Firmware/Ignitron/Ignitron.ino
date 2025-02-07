@@ -17,7 +17,7 @@ const std::string VERSION = "1.0";
 // Control classes
 SparkDataControl    spark_dc;
 SparkButtonHandler  spark_bh;
-SparkLEDControl     spark_led;
+SparkLEDControl     spark_led; 
 SparkDisplayControl spark_display;
 BatteryManagement   battery;
 

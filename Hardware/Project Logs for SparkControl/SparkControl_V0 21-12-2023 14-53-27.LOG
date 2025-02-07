@@ -1,7 +1,0 @@
-Change Component Designator: OldDesignator=J? NewDesignator=J1
-Add Pin To Net: Unknown Pin: Pin J1-S1
-Add Pin To Net: Unknown Pin: Pin J1-S2
-Add Pin To Net: Unknown Pin: Pin J1-S3
-Add Pin To Net: Unknown Pin: Pin J1-S4
-Change Net Name : Old Net Name=NetJ?_A5 New Net Name=NetJ1_A5
-Change Net Name : Old Net Name=NetJ?_B5 New Net Name=NetJ1_B5

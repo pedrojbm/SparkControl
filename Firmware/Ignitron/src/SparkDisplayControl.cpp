@@ -335,7 +335,7 @@ void SparkDisplayControl::showBatteryState() {
 	}
 	else if (batteryLevel<=0)
 	{
-		display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_25_battery, symbolWidth, symbolHeight, color);
+		display.drawBitmap(xPosSymbol, yPosSymbol, epd_bitmap_0_battery, symbolWidth, symbolHeight, color);
 	}
 }
 

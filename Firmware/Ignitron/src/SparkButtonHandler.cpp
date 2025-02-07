@@ -51,7 +51,7 @@ int SparkButtonHandler::checkBootOperationMode(){
 	if (digitalRead(BUTTON_PRESET1_GPIO) == LOW) {
 		operationMode = SPARK_MODE_AMP;
 	} else if (digitalRead(BUTTON_PRESET3_GPIO) == LOW) {
-		operationMode = SPARK_MODE_KEYBOARD;
+		operationMode = SPARK_MODE_AMP;//SPARK_MODE_KEYBOARD;
 	}
 	else { // default mode: APP
 		operationMode = SPARK_MODE_APP;

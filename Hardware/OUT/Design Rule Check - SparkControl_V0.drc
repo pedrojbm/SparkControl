@@ -1,7 +1,11 @@
 Protel Design System Design Rule Check
-PCB File : D:\Documents\Proyectos\SparkControl\SparkControl\PCB\SparkControl_V0.1.PcbDoc
-Date     : 28/12/2023
-Time     : 12:44:40
+PCB File : D:\Documents\Proyectos\SparkControl\Hardware\PCB\SparkControl_V0.1.PcbDoc
+Date     : 18/07/2024
+Time     : 14:30:39
+
+WARNING: Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again
+   Polygon named: GND Plane In net GND
+   Polygon named: GND Plane In net GND
 
 Processing Rule : Clearance Constraint (Gap=5mil) (All),(All)
    Violation between Clearance Constraint: (4.015mil < 10mil) Between Pad J1-(-1657.874mil,1853.396mil) on Multi-Layer And Pad J1-A1B12(-1645.668mil,1811mil) on Top Layer 
@@ -14,14 +18,12 @@ Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Via (-118.11mil,118.11mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Via (-118.11mil,1933.244mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Via (-3425.197mil,118.11mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Via (-3425.197mil,1933.244mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
-Rule Violations :4
+Rule Violations :0
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
-Rule Violations :0
+   Violation between Modified Polygon: Polygon Not Repour After Edit  (GND Plane) on Bottom Layer 
+   Violation between Modified Polygon: Polygon Not Repour After Edit  (GND Plane) on Top Layer 
+Rule Violations :2
 
 Processing Rule : Width Constraint (Min=5mil) (Max=1000mil) (Preferred=5mil) (All)
 Rule Violations :0
@@ -70,6 +72,6 @@ Processing Rule : Height Constraint (Min=0mil) (Max=71497.938mil) (Prefered=500m
 Rule Violations :0
 
 
-Violations Detected : 15
+Violations Detected : 13
 Waived Violations : 0
-Time Elapsed        : 00:00:02
+Time Elapsed        : 00:00:01

@@ -1,9 +1,0 @@
-Removed Pin From Net: NetName=SDA Pin=J2-10
-Removed Pin From Net: NetName=SDA Pin=U3-8
-Added Pin To Net: NetName=SDA Pin=J2-3
-Change Net Name : Old Net Name=SDA New Net Name=Btn_3
-Added Pin To Net: NetName=SDA Pin=J2-10
-Added Pin To Net: NetName=SDA Pin=R17-1
-Added Pin To Net: NetName=SDA Pin=U3-8
-Added Pin To Net: NetName=SDA Pin=U4-8
-Added Net: Name=SDA
